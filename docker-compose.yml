@@ -1,0 +1,18 @@
+version: '3'
+services:
+  octoradardaemon:
+    build: daemon/OctoRadarDaemon/
+    depends_on:
+      - mongo
+
+  octoradarserver:
+    build: backend/OctoRadarServer/
+    ports:
+      - "3000:5000"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"

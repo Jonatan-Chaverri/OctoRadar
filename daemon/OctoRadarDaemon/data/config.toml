@@ -1,0 +1,24 @@
+[octoRadarDaemon.github]
+api_url = "https://github.com/api/v3"
+token = ""
+
+[octoRadarDaemon.databases.mongodb]
+host = "mongo"
+port = 27017
+database = "octoRadar"
+
+[octoRadarDaemon.databases.mongodb.collections]
+organizations = "organizations"
+repositories = "repositories"
+
+[octoRadarDaemon.log]
+level = 'info'
+colorize = true
+
+[octoRadarDaemon.daemon]
+# interval in minutes to fetch data from github
+interval = 60
+# If set to false we will only fetch organizations if the db collection is empty
+fetch_organizations = true
+# The days interval to fetch repository size info
+repository_size_info_days_interval = 15
